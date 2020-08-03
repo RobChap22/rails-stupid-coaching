@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Stupid Coaching</h1>
+
+  <div class="card question">
+    <p><%= params[:question] %></p>
+    <p>-<em>You</em></p>
+  </div>
+
+  <div class="card answer">
+    <% if params[:question] == "I am going to work" %>
+      <p><strong><%= "Great!" %></strong></p>
+    <% elsif params[:question].last == "?" %>
+      <p><strong><%= "Silly question, get dressed and go to work!" %></strong></p>
+    <% else %>
+      <p><strong><%= "I don't care, get dressed and go to work!" %></strong></p>
+    <% end %>
+    <p><em>-Coach</em></p>
+  </div>
+
+  <%= link_to "Ask another question", "/ask" %>
+</div>
